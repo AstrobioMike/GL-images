@@ -1,20 +1,24 @@
 # GL-images
 
-- Installed docker on my mac
+- Made docker file
 
-- Made conda env yaml file
+- **quay.io way**
 
-- In this directory ran `docker build -t astrobiomike/gl-align-qc .`
+    - Made quay.io account
 
-- Made account at hub.docker.com
+    - Made repository linked to a GitHub repository push called 'gl-align-qc'
 
-- Made repo there called 'gl-align-qc'
+    - Manually triggered first build on quay.io
+        - failed a few times for "internal error", but eventually worked without me changing anything
 
-- After build complete, in this directory ran `docker push astrobiomike/gl-align-qc`
 
-- Made quay.io account
+- **hub.docker.com way**
+    - Installed docker on my mac
 
-- Made repository linked to a GitHub repository push called 'gl-align-qc'
+    - In this directory ran `docker build -t astrobiomike/gl-align-qc .`
 
-- Manually triggered first build on quay.io
-  - failed a few times for "internal error", but eventually worked without me changing anything
+    - Made account at hub.docker.com
+
+    - Made repo there called 'gl-align-qc'
+
+    - After build complete, in this directory ran `docker push astrobiomike/gl-align-qc`
