@@ -2,7 +2,7 @@
 # generally followed along with this page: https://blog.ceshine.net/post/replicate-conda-environment-in-docker/
 # and one of Jonathan's: https://github.com/J-81/gl_dockerfiles/blob/gl_multiqc/Dockerfile
 
-# starting with base miniconda image
+# starting with base miniconda image 
 FROM continuumio/miniconda:4.7.12
 
 # Ensure no user interaction is requested
