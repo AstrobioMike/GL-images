@@ -25,3 +25,9 @@ RUN mamba env update --file ./environment.yaml
 # for interactive shell
 RUN conda init bash
 RUN echo "conda activate base" >> /home/genuser/.bashrc
+
+# switch to user
+USER genuser
+
+# make sure base conda env is active (i think)
+RUN source /home/genuser/.bashrc
