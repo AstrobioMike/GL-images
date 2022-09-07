@@ -15,13 +15,12 @@ RUN groupadd -r genuser && \
     chmod -R 777 /home/genuser
 
 # installing mamba
-# RUN conda install -y -c conda-forge mamba
+RUN conda install -y -c conda-forge mamba
 
 # installing environment.yaml
 ADD ./environment.yaml .
 
-# RUN mamba env update --file ./environment.yaml
-RUN conda env update --file ./environment.yaml
+RUN mamba env update --file ./environment.yaml
 
 # for interactive shell
 RUN conda init bash

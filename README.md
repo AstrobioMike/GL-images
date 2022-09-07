@@ -10,10 +10,11 @@
 
 - Made repo there called 'gl-align-qc'
 
-- After build complete, in this directory ran `docker push astrobiomike/gl-align-qc:gl-align-qc`
+- After build complete, in this directory ran `docker push astrobiomike/gl-align-qc'
 
 - Made quay.io account
 
 - Made repository linked to a GitHub repository push called 'gl-align-qc'
 
 - Manually triggered first build on quay.io
+  - failed a few times for "internal error", but eventually worked without me changing anything
