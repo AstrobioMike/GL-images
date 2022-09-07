@@ -12,8 +12,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN groupadd -r genuser && \
     useradd -g genuser genuser && \
     mkdir /home/genuser && \
-    chmod -R 777 /home/genuser && \
-    apt-get update
+    chmod -R 777 /home/genuser
 
 # installing mamba
 RUN conda install -y -c conda-forge mamba
