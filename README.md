@@ -1,11 +1,37 @@
 # GL-images
 
-See different branches :+1: 
+This repo holds docker images created for my GeneLab work. The Dockerfiles are stored here and the images on [quay.io](https://quay.io/user/astrobiomike/).
 
-Installing docker on my Apple Silicon M1 mac following this page (https://docs.docker.com/desktop/install/mac-install/) was problematic. I could install and run it, but then trying to setup conda environments inside those docker containers did not work as they were limited to looking for packages under noarch and linux-aarch64, rather than noarch and linux-64. 
 
-I imagine running containers built elsewhere would be fine (i think), but i don't think i can build them there. Couldn't get things working on my M1 mac, so instead installed on my work mac following the above. Example steps below are after doing that. 
+## Notes on adding new images and putting on Quay
 
+E.g., here's the process for adding the bismark image for the methylseq workflow
+
+Created the subdirectory "methylseq-wf-bismark", added the Dockerfile.
+
+Logged into my quay.io account
+    - made a new repository called 'gl-methylseq-wf-bismark'
+    - set to Public
+    - selected link to a GitHub Repository Push
+    - selected this repository, GL-images
+    - set to "Trigger only on branches and tags matching a regular expression", and entered `tags/methylseq-wf-bismark`
+        - if i want to trigger an auto-build, i can use that tag, otherwise can just manually trigger build on quay (which won't be that often)
+    - left checked "Tag manifest with the branch or tag name"
+    - unchecked "Add `latest` tag if on default branch
+    - entered this as tag template: `${commit_info.short_sha}`
+    - selected this as location of Dockerfile: `/methylseq-wf-bismark/Dockerfile`
+    - selected this as context: `/methylseq-wf-bismark`
+
+
+![image](https://user-images.githubusercontent.com/13923308/225208945-667ed751-b95a-4245-a36c-d2ce40bbbd9c.png)
+
+
+Can start build from here for this example: https://quay.io/repository/astrobiomike/gl-methylseq-wf-bismark?tab=builds
+
+
+---
+
+## Docker reminder commands
 Example building locally after having created Dockerfile, from in the directory:
 
 ```bash
@@ -20,34 +46,9 @@ docker run -it gl-align-qc bash
     # where `-i` is for interactive and `-t` is for tty
 ```
 
-<!--
-Downloaded the Apple Silicon dmg file (not sure yet if I want that over the Intel way, and just relying on rosetta like is currently best with conda, but trying this way first. 
+---
 
+## Docker install notes
+Installing docker on my Apple Silicon M1 mac following this page (https://docs.docker.com/desktop/install/mac-install/) was problematic. I could install and run it, but then trying to setup conda environments inside those docker containers did not work as they were limited to looking for packages under noarch and linux-aarch64, rather than noarch and linux-64. 
 
-```bash
-softwareupdate --install-rosetta
-```
-
-Proceeding with command-line install steps:
-```bash
-sudo hdiutil attach ~/Downloads/Docker.dm
-
-sudo /Volumes/Docker/Docker.app/Contents/MacOS/install --accept-license --user=mike
-
-sudo hdiutil detach /Volumes/Docker
-```
-
-
-Was getting this error initially when trying to run things:
-
-```bash
-Cannot connect to the Docker daemon at unix:///Users/mike/.docker/run/docker.sock. Is the docker daemon running?
-```
-
-Following steps and info from [this response](https://stackoverflow.com/a/49719638/13722613) using homebrew:
-
-```bash
-
-```
-https://www.cprime.com/resources/blog/docker-for-mac-with-homebrew-a-step-by-step-tutorial/
--->
+I imagine running containers built elsewhere would be fine (i think), but i don't think i can build them there. Couldn't get things working on my M1 mac, so instead installed on my work mac following the above. Example steps below are after doing that. 
