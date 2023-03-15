@@ -1,0 +1,5 @@
+# starting with base miniconda/mamba image 
+FROM condaforge/mambaforge:22.11.1-4
+
+# installing wanted programs
+RUN mamba install -y -c conda-forge -c bioconda -c defaults bismark==0.23.1 bowtie2==2.4.4 samtools==1.16.1
