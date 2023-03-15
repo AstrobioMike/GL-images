@@ -26,7 +26,7 @@ Logged into my quay.io account
 ![image](https://user-images.githubusercontent.com/13923308/225208945-667ed751-b95a-4245-a36c-d2ce40bbbd9c.png)
 
 
-Can start build from here for this example: https://quay.io/repository/astrobiomike/gl-methylseq-wf-bismark?tab=builds
+Then triggered first build with "Start New Build", "Run Trigger Now", selected "main" branch, then "Start Build" from the builds page, which is here for this example: https://quay.io/repository/astrobiomike/gl-methylseq-wf-bismark?tab=builds
 
 
 ---
