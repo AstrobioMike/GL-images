@@ -9,18 +9,19 @@ E.g., here's the process for adding the bismark image for the methylseq workflow
 
 Created the subdirectory "methylseq-wf-bismark", added the Dockerfile.
 
-Logged into my quay.io account
-    - made a new repository called 'gl-methylseq-wf-bismark'
-    - set to Public
-    - selected link to a GitHub Repository Push
-    - selected this repository, GL-images
-    - set to "Trigger only on branches and tags matching a regular expression", and entered `tags/methylseq-wf-bismark`
-        - if i want to trigger an auto-build, i can use that tag, otherwise can just manually trigger build on quay (which won't be that often)
-    - left checked "Tag manifest with the branch or tag name"
-    - unchecked "Add `latest` tag if on default branch
-    - entered this as tag template: `${commit_info.short_sha}`
-    - selected this as location of Dockerfile: `/methylseq-wf-bismark/Dockerfile`
-    - selected this as context: `/methylseq-wf-bismark`
+Logged into my quay.io account and did the following:
+
+- made a new repository called 'gl-methylseq-wf-bismark'
+- set to Public
+- selected link to a GitHub Repository Push
+- selected this repository, GL-images
+- set to "Trigger only on branches and tags matching a regular expression", and entered `tags/methylseq-wf-bismark`
+    - if i want to trigger an auto-build, i can use that tag, otherwise can just manually trigger build on quay (which won't be that often)
+- left checked "Tag manifest with the branch or tag name"
+- unchecked "Add `latest` tag if on default branch
+- entered this as tag template: `${commit_info.short_sha}`
+- selected this as location of Dockerfile: `/methylseq-wf-bismark/Dockerfile`
+- selected this as context: `/methylseq-wf-bismark`
 
 
 ![image](https://user-images.githubusercontent.com/13923308/225208945-667ed751-b95a-4245-a36c-d2ce40bbbd9c.png)
