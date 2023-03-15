@@ -11,7 +11,7 @@ Created the subdirectory "methylseq-wf-bismark", added the Dockerfile.
 
 Logged into my quay.io account and did the following:
 
-- made a new repository called 'gl-methylseq-wf-bismark'
+- made a new repository called `gl-methylseq-wf-bismark`
 - set to Public
 - selected link to a GitHub Repository Push
 - selected this repository, GL-images
