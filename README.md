@@ -2,9 +2,9 @@
 
 See different branches :+1: 
 
-Installed docker on my Apple Silicon mac following this page (https://docs.docker.com/desktop/install/mac-install/) was problematic. I could install and run it, but then trying to setup conda environments inside those docker containers did not work as they were limited to looking for packages under noarch and linux-aarch64, rather than noarch and linux-64. 
+Installing docker on my Apple Silicon M1 mac following this page (https://docs.docker.com/desktop/install/mac-install/) was problematic. I could install and run it, but then trying to setup conda environments inside those docker containers did not work as they were limited to looking for packages under noarch and linux-aarch64, rather than noarch and linux-64. 
 
-I imagine running containers built elsewhere would be fine (i think), but i don't think i can build them there.
+I imagine running containers built elsewhere would be fine (i think), but i don't think i can build them there. Couldn't get things working on my M1 mac, so instead installed on my work mac following the above. Example steps below are after doing that. 
 
 Example building locally after having created Dockerfile, from in the directory:
 
