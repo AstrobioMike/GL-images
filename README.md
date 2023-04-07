@@ -60,3 +60,10 @@ I think i just need to specify the platform during the build command, e.g.:
 ```bash
 docker build --platform linux/x86_64 -t gl-align-qc . 
 ```
+
+Also, based on looking [here](https://docs.docker.com/engine/reference/builder/#from), may be able to put that in the Dockerfile, e.g.:
+
+```bash
+FROM --platform linux/amd64 condaforge/mambaforge:22.11.1-4
+```
+
