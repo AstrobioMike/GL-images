@@ -64,6 +64,9 @@ docker build --platform linux/x86_64 -t gl-align-qc .
 Also, based on looking [here](https://docs.docker.com/engine/reference/builder/#from), may be able to put that in the Dockerfile, e.g.:
 
 ```bash
-FROM --platform linux/amd64 condaforge/mambaforge:22.11.1-4
+FROM --platform linux/x86_64 condaforge/mambaforge:22.11.1-4
 ```
+
+> **NOTE**
+> I'm seeing `amd64` and `x86_64` used interchangeably in a lot of places. I think they may be the same. I'm not sure which should be used in these (i've seen both for Dockerfiles), and i'm not sure if they would pull the same things anyway. But, try swapping them if you have a problem sometime.
 
