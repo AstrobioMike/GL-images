@@ -5,7 +5,7 @@ This repo holds docker images created for my GeneLab work. The Dockerfiles are s
 
 ## Notes on adding new images and putting on Quay
 
-E.g., here's the process for adding the bismark image for the methylseq workflow
+**E.g., here's the process for adding the bismark image for the methylseq workflow**
 
 Created the subdirectory "methylseq-wf-bismark", added the Dockerfile.
 
@@ -14,14 +14,19 @@ Logged into my quay.io account and did the following:
 - made a new repository called `gl-methylseq-wf-bismark`
 - set to Public
 - selected link to a GitHub Repository Push
-- selected this repository, GL-images
+- clicked Create Public Repository
+- may have to select apprpriate organization, then click Continue
+- selected this repository, GL-images, then Continue
 - set to "Trigger only on branches and tags matching a regular expression", and entered `tags/methylseq-wf-bismark`
     - if i want to trigger an auto-build, i can use that tag, otherwise can just manually trigger build on quay (which won't be that often)
+- clicked Continue
 - left checked "Tag manifest with the branch or tag name"
-- unchecked "Add `latest` tag if on default branch
-- entered this as tag template: `${commit_info.short_sha}`
-- selected this as location of Dockerfile: `/methylseq-wf-bismark/Dockerfile`
-- selected this as context: `/methylseq-wf-bismark`
+- unchecked "Add `latest` tag if on default branch" (because i'm keeping all of these in the main branch)
+- entered this as tag template: `${commit_info.short_sha}` (pasted in and clicked Add Tag Template, then click Continue)
+- selected this as location of Dockerfile: `/methylseq-wf-bismark/Dockerfile`, clicked Continue
+- selected this as context: `/methylseq-wf-bismark`, clicked Continue
+- ignore Optional Robot Account, clicked Continue, then Continue again
+- notification page about Trigger activate, clicked "Return to..."
 
 
 ![image](https://user-images.githubusercontent.com/13923308/225208945-667ed751-b95a-4245-a36c-d2ce40bbbd9c.png)
